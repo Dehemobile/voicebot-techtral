@@ -1,3 +1,4 @@
+
 // Voicebot TECHTRAL – v1.0
 // Framework: Node.js with Express
 // Function: Handle incoming Twilio calls, play TTS via ElevenLabs, collect user data
@@ -54,8 +55,6 @@ app.post('/handle-name', (req, res) => {
   const response = new VoiceResponse();
   const name = req.body.SpeechResult || 'Kunde';
   response.say({ language: 'de-DE', voice: 'Polly.Vicki' }, `Danke ${name}. Ein Ticket wird erstellt.`);
-  // Aici urmează logica Zoho Desk sau salvare temporară
-
   res.type('text/xml');
   res.send(response.toString());
 });
